@@ -111,6 +111,22 @@ These are specific stakeholder requests beyond building the core model. Each sho
 
 **Goes in**: Exec Summary Section 2 (Research Conducted) — Discussion Q4
 
+**Answer**:
+
+For tree-based models like XGBoost (our primary model), **feature scaling is not necessary**.
+
+**Why tree-based models are scale-invariant**:
+- Trees make decisions based on **threshold splits** (e.g., "is sqft_living > 2,000?")
+- The split decision is identical whether the feature is in raw units (2,000 sqft), standardized (z-score), or min-max scaled (0.45 on a 0-1 scale)
+- The tree algorithm simply adjusts the threshold value to match the feature's scale
+- A split at 2,000 sqft gives the same result as a split at 0.45 on a normalized scale
+
+**When scaling WOULD be necessary**:
+- **Linear regression**: Coefficients depend on feature scale, making interpretation difficult
+
+**What we did**: Since we use XGBoost (tree-based), we did **not** apply StandardScaler or MinMaxScaler. This keeps our preprocessing pipeline simpler without sacrificing performance. Our model achieves R² = 0.89 and RMSE = $128,591 without any scaling, demonstrating that tree-based models handle different feature ranges effectively.
+
+
 ---
 
 ### Task 6: Insurance & Ethics Question (William, VP Finance)
@@ -130,6 +146,8 @@ These are specific stakeholder requests beyond building the core model. Each sho
 
 **Goes in**: Exec Summary Section 4 (Key Findings) — Discussion Q3
 
+
+
 ---
 
 ### Task 7: ML Problem Type Explanation (Devon, CEO)
@@ -144,6 +162,21 @@ These are specific stakeholder requests beyond building the core model. Each sho
 - [ ] Brief and clear for a non-technical audience
 
 **Goes in**: Exec Summary Section 1 (Executive Summary) — Discussion Q1
+
+**Answer**:
+
+This is a **supervised regression** problem.
+
+**Why supervised?** We have labeled training data — each house has a known sale price (the target variable).
+
+**Why regression (not classification)?** Reddic Housing requires accurate numerical price estimates for customers — specific dollar amounts needed for insurance valuations, appraisals, and customer consultations. This business need makes regression the perfect fit: the target variable (`price`) is a **continuous numerical value** that can be any positive real number (e.g., $485,000, $1,250,000, $275,000), not a fixed set of categories. A regression model outputs these specific dollar amounts, which is exactly what the business needs. In contrast, a classification model would only predict categories (like "cheap," "medium," or "expensive"), which doesn't meet the company's requirement for precise numerical estimates.
+
+**How we measure success**: Because this is regression, we evaluate model performance with metrics like:
+- **RMSE** (Root Mean Squared Error): Average prediction error in dollars
+- **R-squared**: How well the model explains price variation (0-1 scale, higher is better)
+
+These metrics measure how close our predicted prices are to the actual sale prices (prediction error), which is fundamentally different from classification problems that use metrics like accuracy or precision.
+
 
 ---
 
