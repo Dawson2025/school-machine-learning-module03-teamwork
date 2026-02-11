@@ -124,6 +124,11 @@
 <!-- 3. Post-prediction price reduction for specific zip codes -->
 <!-- 4. This would violate federal laws and/or ethics -->
 <!-- Address Fair Housing Act, redlining, ethical implications. This is a 5-point rubric item. -->
+Lowering predicted prices for properties in low-income areas would raise serious legal and ethical concerns. Adjusting predictions before or after training based on neighborhood characteristics risks introducing bias and could constitute redlining under the Fair Housing Act.
+
+While incorporating external economic data can improve predictive accuracy in some contexts, demographic and income variables should be handled with extreme caution, because they can serve as proxies for protected classes.
+
+The recommended approach is to avoid price manipulation entirely and instead manage insurance risk through separate underwriting or risk-assessment models, ensuring compliance with federal law and ethical AI standards.
 
 ### Surprising or Counterintuitive Findings
 
@@ -222,3 +227,4 @@ Below are GitHub Gist links to the notebooks we used during this case study:
 - 
 
 ---
+
