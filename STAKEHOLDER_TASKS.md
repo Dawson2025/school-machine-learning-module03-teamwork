@@ -186,10 +186,11 @@ These metrics measure how close our predicted prices are to the actual sale pric
 |---|------|-------------|----------|---------------------|
 | 1 | Prediction reliability evidence | Cecil | _______ | 3. Results |
 | 2 | Holdout CSV predictions | Cecil | Peter | 3. Results |
-| 3 | Feature importance analysis | William | _______ | 4. Key Findings |
+| 3 | Feature importance analysis | William | Tanner | 4. Key Findings |
 | 4 | External factors investigation | Devon | _______ | 2. Research + 4. Findings |
 | 5 | Feature scaling explanation | Johnny | Dawson | 2. Research |
 | 6 | Insurance & ethics question | William | _______ | 4. Key Findings |
 | 7 | ML problem type explanation | Devon | Dawson | 1. Executive Summary |
 
 **Unassigned tasks**: 1, 3, 4, 6 (need Peter and Tanner to claim)
+
