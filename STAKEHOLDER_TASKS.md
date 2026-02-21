@@ -6,7 +6,7 @@
 |--------|------|---------------|
 | **Dawson** | Team Member | Tasks 5, 7 |
 | **Peter** | Project Manager | Task 2 (holdout CSV) |
-| **Tanner** | Team Member | — |
+| **Tanner** | Team Member | Tasks 1 and 6 |
 
 ---
 
@@ -193,3 +193,4 @@ These metrics measure how close our predicted prices are to the actual sale pric
 | 7 | ML problem type explanation | Devon | Dawson | 1. Executive Summary |
 
 **Unassigned tasks**: 1, 3, 4, 6 (need Peter and Tanner to claim)
+
